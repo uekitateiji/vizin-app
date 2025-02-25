@@ -1,9 +1,7 @@
 import { View } from "react-native";
 
 const LoginPage = () => {
-    return (
-        <View></View>
-    )
-}
+  return <View></View>;
+};
 
 export default LoginPage;

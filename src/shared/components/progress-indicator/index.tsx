@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { View, Animated, Easing } from 'react-native';
+import { useEffect, useRef } from "react";
+import { View, Animated, Easing } from "react-native";
 
 interface ProgressIndicatorProps {
   totalSteps: number;
@@ -8,7 +8,12 @@ interface ProgressIndicatorProps {
   onComplete?: () => void;
 }
 
-const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ totalSteps, duration, currentStep, onComplete }) => {
+const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
+  totalSteps,
+  duration,
+  currentStep,
+  onComplete,
+}) => {
   const progress = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -27,17 +32,20 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ totalSteps, durat
       {Array.from({ length: totalSteps }).map((_, index) => {
         const width = progress.interpolate({
           inputRange: [index, index + 1],
-          outputRange: ['0%', '100%'],
-          extrapolate: 'clamp',
+          outputRange: ["0%", "100%"],
+          extrapolate: "clamp",
         });
 
         return (
-          <View key={index} className="h-1 flex-1 mx-1 bg-gray-300 rounded-full overflow-hidden">
+          <View
+            key={index}
+            className="h-1 flex-1 mx-1 bg-gray-300 rounded-full overflow-hidden"
+          >
             <Animated.View
               style={{
                 width,
-                height: '100%',
-                backgroundColor: '#3B82F6',
+                height: "100%",
+                backgroundColor: "#3B82F6",
               }}
             />
           </View>

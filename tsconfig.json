@@ -4,18 +4,10 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@features/*": [
-        "features/*"
-      ],
-      "@shared/*": [
-        "shared/*"
-      ],
-      "@types/*": [
-        "@types/*"
-      ],
-      "@navigation/*": [
-        "navigation/*"
-      ]
+      "@features/*": ["features/*"],
+      "@shared/*": ["shared/*"],
+      "@types/*": ["@types/*"],
+      "@navigation/*": ["navigation/*"]
     }
   }
 }

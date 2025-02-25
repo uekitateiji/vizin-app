@@ -1,49 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, ImageBackground } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import ProgressIndicator from '@shared/components/progress-indicator';
-import CustomButton from '@shared/components/custom-button';
+import React, { useEffect, useState } from "react";
+import { View, Text, ImageBackground } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import ProgressIndicator from "@shared/components/progress-indicator";
+import CustomButton from "@shared/components/custom-button";
 
 type RootStackParamList = {
   Intro: undefined;
   Login: undefined;
 };
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Intro'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Intro">;
 
 const banners = [
   {
-    image: require('../../../assets/images/banner-1.png'),
-    title: 'O marketplace exclusivo para o seu condomínio!',
-    subtitle: 'Compre, venda e contrate serviços de forma rápida e segura, sem sair de casa.',
+    image: require("../../../assets/images/banner-1.png"),
+    title: "O marketplace exclusivo para o seu condomínio!",
+    subtitle:
+      "Compre, venda e contrate serviços de forma rápida e segura, sem sair de casa.",
   },
   {
-    image: require('../../../assets/images/banner-2.png'),
-    title: 'Negociações seguras entre vizinhos!',
-    subtitle: 'Seu marketplace local, com mais confiança e transparência.',
+    image: require("../../../assets/images/banner-2.png"),
+    title: "Negociações seguras entre vizinhos!",
+    subtitle: "Seu marketplace local, com mais confiança e transparência.",
   },
   {
-    image: require('../../../assets/images/banner-3.png'),
-    title: 'Anuncie e compre sem sair de casa!',
-    subtitle: 'Venda o que não usa mais e encontre produtos incríveis dentro do seu condomínio.',
+    image: require("../../../assets/images/banner-3.png"),
+    title: "Anuncie e compre sem sair de casa!",
+    subtitle:
+      "Venda o que não usa mais e encontre produtos incríveis dentro do seu condomínio.",
   },
 ];
 
 const IntroPage: React.FC = () => {
   const navigation = useNavigation<NavigationProp>();
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [progressKey, setProgressKey] = useState(0);
 
   const handleNavigateToLogin = () => {
-    navigation.navigate('Login');
+    navigation.navigate("Login");
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % banners.length);
-    }, 3000);
+    const cycleDuration = 3000;
+    const timer = setInterval(() => {
+      setCurrentBanner((prev) => {
+        const nextBanner = (prev + 1) % banners.length;
+        if (nextBanner === 0) setProgressKey((key) => key + 1); // Reinicia o progresso
+        return nextBanner;
+      });
+    }, cycleDuration);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -55,8 +63,9 @@ const IntroPage: React.FC = () => {
       >
         <View className="mt-24 px-6">
           <ProgressIndicator
+            key={progressKey}
             totalSteps={banners.length}
-            duration={banners.length * 3000}
+            duration={9000}
             currentStep={currentBanner + 1}
           />
         </View>
