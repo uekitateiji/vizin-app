@@ -1,19 +1,15 @@
 import { useEffect, useRef } from "react";
 import { View, Animated, Easing } from "react-native";
+import { ProgressIndicadorProps } from "./progress-indicator.types";
 
-interface ProgressIndicatorProps {
-  totalSteps: number;
-  duration: number;
-  currentStep: number; // Adicionado para sincronização com o banner
-  onComplete?: () => void;
-}
+const AnimatedView = Animated.createAnimatedComponent(View);
 
-const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
+const ProgressIndicator = ({
   totalSteps,
   duration,
   currentStep,
-  onComplete,
-}) => {
+}: ProgressIndicadorProps) => {
+
   const progress = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -22,10 +18,8 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
       duration: duration / totalSteps,
       easing: Easing.linear,
       useNativeDriver: false,
-    }).start(() => {
-      if (onComplete) onComplete();
     });
-  }, [currentStep, duration, totalSteps, onComplete]);
+  }, [currentStep, duration, totalSteps]);
 
   return (
     <View className="flex-row justify-between items-center w-full px-4">
@@ -41,12 +35,11 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
             key={index}
             className="h-1 flex-1 mx-1 bg-gray-300 rounded-full overflow-hidden"
           >
-            <Animated.View
+            <AnimatedView
               style={{
                 width,
-                height: "100%",
-                backgroundColor: "#3B82F6",
               }}
+              className="bg-primary h-full"
             />
           </View>
         );
