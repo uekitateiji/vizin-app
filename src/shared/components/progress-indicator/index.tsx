@@ -4,31 +4,29 @@ import { View, Animated, Easing } from 'react-native';
 interface ProgressIndicatorProps {
   totalSteps: number;
   duration: number;
+  currentStep: number; // Adicionado para sincronização com o banner
   onComplete?: () => void;
 }
 
-const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ totalSteps, duration, onComplete }) => {
+const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ totalSteps, duration, currentStep, onComplete }) => {
   const progress = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(progress, {
-      toValue: 1,
-      duration,
+      toValue: currentStep,
+      duration: duration / totalSteps,
       easing: Easing.linear,
       useNativeDriver: false,
     }).start(() => {
       if (onComplete) onComplete();
     });
-  }, [duration, onComplete]);
+  }, [currentStep, duration, totalSteps, onComplete]);
 
   return (
     <View className="flex-row justify-between items-center w-full px-4">
       {Array.from({ length: totalSteps }).map((_, index) => {
-        const stepStart = index / totalSteps;
-        const stepEnd = (index + 1) / totalSteps;
-
         const width = progress.interpolate({
-          inputRange: [stepStart, stepEnd],
+          inputRange: [index, index + 1],
           outputRange: ['0%', '100%'],
           extrapolate: 'clamp',
         });
