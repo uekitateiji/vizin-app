@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { CardHighlightProps } from "./CardHighlight.types";
 import '@shared/styles/global.css';
 import { Ionicons } from "@expo/vector-icons";
-import CustomButton from "../custom-button";
+import CustomButton from "../CustomButton";
 
 const CardHighlight = ({
   title,

@@ -1,6 +1,5 @@
 import { ScrollView, Text, View, SafeAreaView } from 'react-native';
 import '@shared/styles/global.css';
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import CardHighlight from '@shared/components/card-highlight';
 import { Ionicons } from "@expo/vector-icons";
 import cardHighlight from '@data/card-highlight.datta';
@@ -15,7 +14,6 @@ const dataCardService = [
   { label: "Encanador", icon: "server-outline" },
 ];
 const Home = () => {
-  const insets = useSafeAreaInsets();
   return (
     <SafeAreaView className='bg-white h-full'>
       <ScrollView className='p-4 '>
@@ -131,7 +129,7 @@ const Section = ({ title, subtitle, handleRouteShowAll, children }: any) => {
 const CardServiceCompact = ({ label, icon }: any) => {
 
   return (
-    <View className='justify-center items-center  pr-4'>
+    <View className='justify-center items-center pr-4 '>
       <View className='h-24 w-24 border-2 border-gray-200 rounded-xl justify-center items-center'>
         <Ionicons name={icon} size={30} color="#456EFE" className='' />
       </View>

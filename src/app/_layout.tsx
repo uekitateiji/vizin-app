@@ -37,8 +37,8 @@ const Layout = () => {
 
       >
         <Stack.Screen name="(public)/index" options={{ headerShown: false }} />
-        <Stack.Screen name="/login" />
-        <Stack.Screen name="/reset-password" />
+        <Stack.Screen name="(public)/login" />
+        <Stack.Screen name="(public)/reset-password" />
         <Stack.Screen name="/create-account" />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 

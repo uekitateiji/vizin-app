@@ -1,6 +1,6 @@
 import { View, Text, TextInput } from 'react-native';
 import '@shared/styles/global.css';
-import CustomButton from '@shared/components/custom-button';
+import CustomButton from '@shared/components/CustomButton';
 import { Link } from 'expo-router';
 
 export default function ResetPassword() {

@@ -12,7 +12,8 @@ module.exports = {
         secondary: "#27AE60",
         tertiary: "#10B981",
         base: "#f5f5f5",
-        itemBackground: "#f6f6f6"
+        itemBackground: "#bdbdbd",
+        border: "#e0e0e0"
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
