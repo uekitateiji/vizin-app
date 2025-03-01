@@ -1,8 +1,7 @@
 import { View, Text } from "react-native";
-import { CardHighlightProps } from "./CardHighlight.types";
+import { CardHighlightProps } from "./types";
 import '@shared/styles/global.css';
 import { Ionicons } from "@expo/vector-icons";
-import CustomButton from "../CustomButton";
 
 const CardHighlight = ({
   title,
@@ -18,7 +17,7 @@ const CardHighlight = ({
   return (
     <View className="pr-4">
       <View
-        className={`mb-4 bg-white border-2 min-h-32 rounded-xl p-4 shadow-md shadow-purple-200 ${highlight ? "border-purple-700" : "border-itemBackground"}`}
+        className={`mb-4 bg-white border-2 min-h-32 rounded-xl p-4  shadow-purple-200 ${highlight ? "border-purple-700" : "border-itemBackground"}`}
       >
         {/* Seção do cabeçalho */}
         <View className="h-max">

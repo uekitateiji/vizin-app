@@ -57,7 +57,7 @@ const Home = () => {
               reviews={20}
               rating={10}
               advertiser={"Teiji Uekita"}
-
+              isHighlight={true}
               isCompact={true}
             />
 
