@@ -1,6 +1,6 @@
 import { View, Text, ImageBackground } from "react-native";
 import { ProductCardProps } from "./types";
-import AdvertiserRating from "../AdvertiserRating";
+import { Ionicons } from "@expo/vector-icons";
 
 const CardProduct = ({
   title,
@@ -46,8 +46,18 @@ const ProductDetails = ({
       <Text className="font-semibold text-2xl">R$ {price}</Text>
       <Text>{title}</Text>
     </View>
-    <AdvertiserRating advertiser={advertiser} rating={rating} reviews={reviews} />
-  </View>
+    <View className="flex-col">
+      <View className="flex-row items-center">
+        <Ionicons name="person" size={16} color="#000" className="pr-1" />
+        <Text className="text-lg">{advertiser}</Text>
+      </View>
+
+      <View className="flex-row items-center">
+        <Ionicons name="star" size={16} color="#FACC15" />
+        <Text className="font-semibold text-primary pr-1">{rating.toFixed(1)}</Text>
+        <Text className="text-gray-500 text-sm">({reviews} avaliações)</Text>
+      </View>
+    </View>  </View>
 );
 
 const HighlightTag = () => (
