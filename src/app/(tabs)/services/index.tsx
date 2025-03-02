@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import '@shared/styles/global.css';
-import Card from '@shared/components/card-services';
+import Card from '@shared/components/ServiceCard';
 import cardsService from '@data/cards-service.data';
 import { Ionicons } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";

@@ -1,4 +1,4 @@
-export type CardProps = {
+export type ServiceCardProps = {
   applicant?: string;
   title: string;
   value: string;
@@ -6,7 +6,7 @@ export type CardProps = {
   category?: string;
   imageUrl: any;
   date: string;
-  rating?: number;   // ✅ Adicionado rating como number
+  rating?: number;
   reviews?: number;
   categoryColor?: string;
 };

@@ -1,9 +1,9 @@
 import { View, Text, Image } from "react-native";
-import { CardProps } from "./card.types";
+import { ServiceCardProps } from "./types";
 import '@shared/styles/global.css';
 import { Ionicons } from "@expo/vector-icons";
 
-const CardServices = ({ title, value, description, applicant, category, rating = 0, reviews, categoryColor }: CardProps) => {
+const ServiceCard = ({ title, value, description, applicant, category, rating = 0, reviews, categoryColor }: ServiceCardProps) => {
   // Função para truncar a descrição
   const truncateDescription = (text: string, maxLength: number) => {
     return text.length > maxLength ? text.substring(0, maxLength - 3) + '...' : text;
@@ -55,4 +55,4 @@ const CardServices = ({ title, value, description, applicant, category, rating =
   );
 };
 
-export default CardServices;
+export default ServiceCard;
