@@ -104,7 +104,7 @@ export default function Index() {
           <Text className="text-2xl mb-14 mt-2 text-white">
             {banners[bannerCurrentIndex].description}
           </Text>
-          <CustomButton label="Vamos lá!" onPress={() => router.push("(public)/login")} fullWidth />
+          <CustomButton label="Vamos lá!" onPress={() => router.push("login")} fullWidth />
         </View>
 
       </Animated.View>

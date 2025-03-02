@@ -1,51 +1,45 @@
-import { Stack, router } from "expo-router";
+import { ClerkProvider } from '@clerk/clerk-expo'
+import { SplashScreen, Stack } from "expo-router";
 import '@shared/styles/global.css';
-import { Ionicons } from "@expo/vector-icons";
-import { useFonts } from 'expo-font';
+import { tokenCache } from '@shared/utils/cache';
+import { LogBox } from "react-native";
+import { useFonts, PlusJakartaSans_400Regular, PlusJakartaSans_700Bold } from '@expo-google-fonts/plus-jakarta-sans';
+import { useEffect } from 'react';
 
-import { TouchableOpacity, StatusBar, useColorScheme } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { PlusJakartaSans_400Regular, PlusJakartaSans_700Bold } from '@expo-google-fonts/plus-jakarta-sans';
+const clerkPublishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
+if (!clerkPublishableKey) {
+  throw new Error('Add EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env')
+}
 
-const Layout = () => {
-  const theme = useColorScheme(); // Retorna 'light' ou 'dark'
+LogBox.ignoreLogs(['Clerk: Clerk has been loaded with development keys']);
 
-  const insets = useSafeAreaInsets();
+const InitialLayout = () => {
+
   const [fontsLoaded] = useFonts({
-    'PlusJakartaSans-Regular': PlusJakartaSans_400Regular,
-    'PlusJakartaSans-Bold': PlusJakartaSans_700Bold,
+    PlusJakartaSans_400Regular,
+    PlusJakartaSans_700Bold,
   });
+
+  useEffect(() => {
+    SplashScreen.hideAsync();
+  }, [fontsLoaded])
+
   return (
+    <Stack
+      screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(public)" />
+    </Stack>
+  )
+}
 
-    <>
-      <StatusBar
-        backgroundColor={theme === 'dark' ? '#222' : '#ff5733'}
-        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
-      />
-      <Stack
-        screenOptions={({ route }) => ({
-          headerTitle: "",
-          headerLeft: ({ canGoBack }) =>
-            canGoBack && route.name !== "(tabs)" ? ( // ✅ Verificação da rota (tabs)
-              <TouchableOpacity onPress={() => router.back()}>
-                <Ionicons name="arrow-back-outline" size={24} color="#000000" />
-              </TouchableOpacity>
-            ) : null,
-          headerLargeTitleShadowVisible: false,
-        })}
+const RootLayout = () => {
+  return (
+    <ClerkProvider publishableKey={clerkPublishableKey!} tokenCache={tokenCache}>
+      <InitialLayout />
+    </ClerkProvider>
+  )
+}
 
-      >
-        <Stack.Screen name="(public)/index" options={{ headerShown: false }} />
-        <Stack.Screen name="(public)/login" />
-        <Stack.Screen name="(public)/reset-password" />
-        <Stack.Screen name="/create-account" />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
-      </Stack>
-    </>
-
-  );
-};
-
-export default Layout;
+export default RootLayout;

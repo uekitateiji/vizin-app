@@ -11,6 +11,7 @@ module.exports = {
         primary: "#456EFE",
         secondary: "#27AE60",
         tertiary: "#10B981",
+        danger: "#FF0000",
         base: "#f5f5f5",
         itemBackground: "#bdbdbd",
         border: "#e0e0e0"
