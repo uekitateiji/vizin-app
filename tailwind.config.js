@@ -14,7 +14,8 @@ module.exports = {
         danger: "#FF0000",
         base: "#f5f5f5",
         itemBackground: "#bdbdbd",
-        border: "#e0e0e0"
+        border: "#e0e0e0",
+        highlight: "#a855f7"
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
