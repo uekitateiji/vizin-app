@@ -2,7 +2,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import '@shared/styles/global.css';
-import CardProduct from '@shared/components/CardProdut';
+import ProductCard from '@shared/components/ProductCard';
 export default function Products() {
   const [activeTab, setActiveTab] = useState<'myProducts' | 'neighborsProducts'>('neighborsProducts');
 
@@ -42,7 +42,7 @@ export default function Products() {
           <ScrollView contentInsetAdjustmentBehavior="automatic">
 
             <View className='p-4'>
-              <CardProduct
+              <ProductCard
                 title="Lancer Ralliart"
                 price="95.000,00"
                 reviews={20}
@@ -52,7 +52,7 @@ export default function Products() {
 
               />
 
-              <CardProduct
+              <ProductCard
                 title="Lancer Ralliart"
                 price="95.000,00"
                 reviews={20}
@@ -61,7 +61,7 @@ export default function Products() {
 
               />
 
-              <CardProduct
+              <ProductCard
                 title="Lancer Ralliart"
                 price="95.000,00"
                 reviews={20}
@@ -70,7 +70,7 @@ export default function Products() {
 
               />
 
-              <CardProduct
+              <ProductCard
                 title="Lancer Ralliart"
                 price="95.000,00"
                 reviews={20}
@@ -95,7 +95,7 @@ export default function Products() {
 // <ScrollView contentInsetAdjustmentBehavior="automatic">
 
 // <View className='p-4'>
-//   <CardProduct
+//   <ProductCard
 //     title="Lancer Ralliart"
 //     price="95.000,00"
 //     reviews={20}
@@ -105,7 +105,7 @@ export default function Products() {
 
 //   />
 
-//   <CardProduct
+//   <ProductCard
 //     title="Lancer Ralliart"
 //     price="95.000,00"
 //     reviews={20}
@@ -114,7 +114,7 @@ export default function Products() {
 
 //   />
 
-//   <CardProduct
+//   <ProductCard
 //     title="Lancer Ralliart"
 //     price="95.000,00"
 //     reviews={20}
@@ -123,7 +123,7 @@ export default function Products() {
 
 //   />
 
-//   <CardProduct
+//   <ProductCard
 //     title="Lancer Ralliart"
 //     price="95.000,00"
 //     reviews={20}

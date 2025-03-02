@@ -1,4 +1,4 @@
-export type CardProductProps = {
+export type ProductCardProps = {
     title: string;
     price: string;
     reviews: number;

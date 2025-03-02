@@ -3,7 +3,7 @@ import '@shared/styles/global.css';
 import CardHighlight from '@shared/components/card-highlight';
 import { Ionicons } from "@expo/vector-icons";
 import cardHighlight from '@data/card-highlight.datta';
-import CardProduct from '@shared/components/CardProdut';
+import ProductCard from '@shared/components/ProductCard';
 import { Link } from "expo-router";
 
 const dataCardService = [
@@ -51,7 +51,7 @@ const Home = () => {
           <ScrollView showsHorizontalScrollIndicator={false}
             contentInsetAdjustmentBehavior="automatic" horizontal className=' w-full'>
 
-            <CardProduct
+            <ProductCard
               title="Lancer Ralliart"
               price="95.000,00"
               reviews={20}
@@ -61,7 +61,7 @@ const Home = () => {
               isCompact={true}
             />
 
-            <CardProduct
+            <ProductCard
               title="Lancer Ralliart"
               price="95.000,00"
               reviews={20}

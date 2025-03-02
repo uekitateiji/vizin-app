@@ -70,7 +70,7 @@ export default function Login() {
 
         <CustomButton
           label="Acessar"
-          onPress={handleSubmit(submit)}
+          onPress={() => router.push("home")}
         />
 
         <CustomButton
