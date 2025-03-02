@@ -1,4 +1,4 @@
-export type CardHighlightProps = {
+export type RequestCardProps = {
   title: string;
   imageUrl?: string;
   highlight: boolean;

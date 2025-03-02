@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
-import { CardHighlightProps } from "./types";
+import { RequestCardProps } from "./types";
 import '@shared/styles/global.css';
 import { Ionicons } from "@expo/vector-icons";
 
-const CardHighlight = ({
+const RequestCard = ({
   title,
   imageUrl,
   highlight,
@@ -12,7 +12,7 @@ const CardHighlight = ({
   category,
   advertiser,
   isCompact
-}: CardHighlightProps) => {
+}: RequestCardProps) => {
   console.log('~ IS COMPACT ~ ', isCompact);
   return (
     <View className="pr-4">
@@ -79,4 +79,4 @@ const CardHighlight = ({
   );
 };
 
-export default CardHighlight;
+export default RequestCard;

@@ -1,6 +1,6 @@
 import { ScrollView, Text, View, SafeAreaView } from 'react-native';
 import '@shared/styles/global.css';
-import CardHighlight from '@shared/components/card-highlight';
+import CardHighlight from '@shared/components/RequestCard';
 import { Ionicons } from "@expo/vector-icons";
 import cardHighlight from '@data/card-highlight.datta';
 import ProductCard from '@shared/components/ProductCard';

@@ -4,7 +4,7 @@ import '@shared/styles/global.css';
 import { Ionicons } from "@expo/vector-icons";
 import cardHighlight from '@data/card-highlight.datta';
 import Card from '@shared/components/card';
-import CardHighlight from '@shared/components/card-highlight';
+import CardHighlight from '@shared/components/RequestCard';
 const cards = [
   {
     id: 1,
