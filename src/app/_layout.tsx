@@ -1,9 +1,8 @@
-import { ClerkProvider } from '@clerk/clerk-expo'
-import { SplashScreen, Stack } from "expo-router";
+import { ClerkProvider, useAuth } from '@clerk/clerk-expo'
+import { Stack, useRouter, useSegments } from "expo-router";
 import '@shared/styles/global.css';
 import { tokenCache } from '@shared/utils/cache';
 import { LogBox } from "react-native";
-import { useFonts, PlusJakartaSans_400Regular, PlusJakartaSans_700Bold } from '@expo-google-fonts/plus-jakarta-sans';
 import { useEffect } from 'react';
 
 const clerkPublishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
@@ -16,14 +15,16 @@ LogBox.ignoreLogs(['Clerk: Clerk has been loaded with development keys']);
 
 const InitialLayout = () => {
 
-  const [fontsLoaded] = useFonts({
-    PlusJakartaSans_400Regular,
-    PlusJakartaSans_700Bold,
-  });
+  // const { isLoaded, isSignedIn } = useAuth();
+  // const segments = useSegments();
+  // const router = useRouter();
 
-  useEffect(() => {
-    SplashScreen.hideAsync();
-  }, [fontsLoaded])
+  // useEffect(() => {
+
+  //   console.log('~ isLoaded ~', isLoaded);
+
+
+  // }, [isLoaded]);
 
   return (
     <Stack
@@ -34,10 +35,11 @@ const InitialLayout = () => {
 }
 
 const RootLayout = () => {
+  console.log("clerkPublishableKey", clerkPublishableKey);
   return (
-    <ClerkProvider publishableKey={clerkPublishableKey!} tokenCache={tokenCache}>
-      <InitialLayout />
-    </ClerkProvider>
+    // <ClerkProvider publishableKey={clerkPublishableKey} tokenCache={tokenCache}>
+    <InitialLayout />
+    // </ClerkProvider>
   )
 }
 

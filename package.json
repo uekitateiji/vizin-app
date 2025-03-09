@@ -11,7 +11,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@clerk/clerk-expo": "^2.8.2",
+    "@clerk/clerk-expo": "^2.8.4",
+    "@clerk/types": "^4.47.0",
     "@expo-google-fonts/plus-jakarta-sans": "^0.2.3",
     "@hookform/resolvers": "^4.1.2",
     "expo": "^52.0.37",

@@ -823,12 +823,12 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@clerk/clerk-expo@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-2.8.2.tgz#467bb2d06cf3860f39a412cc32f84f36514f29f7"
-  integrity sha512-JtYJMbsuxhlodlDjNR5ahx8OdRczUbpAyTqHpSFEFf00SfaM8ihst9aFoci7q+zLl1B2zi3FAz/8tILY9o6hEA==
+"@clerk/clerk-expo@^2.8.4":
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-expo/-/clerk-expo-2.8.4.tgz#8a783b765f269bdc099b9a88847cb944167937da"
+  integrity sha512-S85XZfuAgPAmMq1RVwFao4fv/oj1Nic1oUYurVNqq4nCwUiKYZc7x7Vh1qNe7Ljpmmi5143GFZ+mT4hpqjJjGA==
   dependencies:
-    "@clerk/clerk-js" "^5.54.2"
+    "@clerk/clerk-js" "^5.55.1"
     "@clerk/clerk-react" "^5.24.1"
     "@clerk/shared" "^3.0.0"
     "@clerk/types" "^4.47.0"
@@ -836,12 +836,12 @@
     react-native-url-polyfill "2.0.0"
     tslib "2.4.1"
 
-"@clerk/clerk-js@^5.54.2":
-  version "5.54.2"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-5.54.2.tgz#a3e574085d3cd128477c9ac04e4db35d72b10fe6"
-  integrity sha512-ER3ybcImNgwOzPybv71wHzavTbwVoGhsr1Zq5E4AEKi147Pms/x5q9oi/JxfWUSjXZCqmwOt3E6+JvqgthlCgg==
+"@clerk/clerk-js@^5.55.1":
+  version "5.55.1"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-js/-/clerk-js-5.55.1.tgz#7169d77b7b2df97179a05dbde867a27c3d2a0348"
+  integrity sha512-9sLRDxqK+tVb332vC2ZiogclBhs1pTUdwYcRkSV9rMAKJh9f3WfOdvqeMhgVUGeZXGyFhzxe3yp4dzcKEAbGzg==
   dependencies:
-    "@clerk/localizations" "^3.10.8"
+    "@clerk/localizations" "^3.11.1"
     "@clerk/shared" "^3.0.0"
     "@clerk/types" "^4.47.0"
     "@coinbase/wallet-sdk" "4.3.0"
@@ -870,10 +870,10 @@
     "@clerk/types" "^4.47.0"
     tslib "2.4.1"
 
-"@clerk/localizations@^3.10.8":
-  version "3.10.8"
-  resolved "https://registry.yarnpkg.com/@clerk/localizations/-/localizations-3.10.8.tgz#776719fc14d52f40e5522fa182e174bce81a2eaa"
-  integrity sha512-G4yjQSZAvW8kQyOSY7YOh5B41NSfHoJ6JrbvEdsUcpe6Lkds39OVCeQDtoyixVZtc1OMutzcDZsgdDC9YU8Tjg==
+"@clerk/localizations@^3.11.1":
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/@clerk/localizations/-/localizations-3.11.1.tgz#1d4a4f263a1cb2ebe3aaa612a674671da8a2f201"
+  integrity sha512-obS6fiQEeQbz3a2xHhxeLJDWfhwGVTt9BiwOSNMPzUE2AF8I8UdzCunYTOx9/pzqPYTfcwKl990N8PAjDkhBLA==
   dependencies:
     "@clerk/types" "^4.47.0"
 
